@@ -20,3 +20,7 @@ class TestWeb(unittest.TestCase):
         finally:
             time.sleep(5)
             browser.quit()
+
+if __name__ == "__main__":
+    unittest.main()
+    print('Test passed')

@@ -1,3 +1,3 @@
 # Stepik-Automation-Selenium-Course
-Home work for Stepik Automation Selenium Course
-New information to push
+Hello this is my first course of Python Automation <br />
+Hope it will be interesting for you

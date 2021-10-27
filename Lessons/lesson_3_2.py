@@ -2,8 +2,11 @@ from selenium import webdriver
 import time
 import math
 from selenium.webdriver.common.by import By
+import unittest
 
-def test_registration2():
+class TestRegistration(unittest.TestCase):
+
+    def test_registration2(self):
         with webdriver.Chrome() as browser:
             link = "http://suninjuly.github.io/registration2.html"
             browser.get(link)
@@ -18,11 +21,11 @@ def test_registration2():
             time.sleep(1)
             welcome_text_elt = browser.find_element_by_tag_name("h1")
             welcome_text = welcome_text_elt.text
-            assert ("Congratulations! You have successfully registered!"== welcome_text)
+            self.assertEqual("Congratulations! You have successfully registered!", welcome_text)
             time.sleep(2)
             browser.quit()
 
-def test_registration1():
+    def test_registration1(self):
         with webdriver.Chrome() as browser:
             link = "http://suninjuly.github.io/registration1.html"
             browser.get(link)
@@ -37,7 +40,9 @@ def test_registration1():
             time.sleep(1)
             welcome_text_elt = browser.find_element_by_tag_name("h1")
             welcome_text = welcome_text_elt.text
-            assert "Congratulations! You have successfully registered!"== welcome_text
+            self.assertEqual("Congratulations! You have successfully registered!", welcome_text)
             time.sleep(2)
             browser.quit()
 
+if __name__=='__main__':
+    unittest.main()
